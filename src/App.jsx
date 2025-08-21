@@ -150,21 +150,21 @@ export default function App() {
       <Section id="cases" title="Кейсы" subtitle="Пару примеров типовых задач, которые закрываю за 1–2 визита.">
         <div className="grid gap-6 md:grid-cols-3">
           <Card>
-            <div className="h-48 rounded-t-2xl bg-[radial-gradient(ellipse_at_center,_rgba(251,191,36,0.35),_transparent_60%)]" />
+            <img src="/case-irrigation-wifi.jpg" alt="Система автополива и уличная Wi‑Fi точка доступа" className="h-48 w-full object-cover rounded-t-2xl" />
             <div className="p-6">
               <h4 className="font-semibold">Полив + Wi‑Fi на участке</h4>
               <p className="mt-1 text-sm text-slate-600">Контроллер полива, уличная точка доступа, датчики влажности. Управление со смартфона.</p>
             </div>
           </Card>
           <Card>
-            <div className="h-48 rounded-t-2xl bg-[radial-gradient(ellipse_at_center,_rgba(16,185,129,0.35),_transparent_60%)]" />
+            <img src="/case-cameras-lighting.jpg" alt="Камеры и уличное освещение у крыльца" className="h-48 w-full object-cover rounded-t-2xl" />
             <div className="p-6">
               <h4 className="font-semibold">Камеры и уличное освещение</h4>
               <p className="mt-1 text-sm text-slate-600">IP‑камеры с записью, датчик движения, сценарии подсветки крыльца.</p>
             </div>
           </Card>
           <Card>
-            <div className="h-48 rounded-t-2xl bg-[radial-gradient(ellipse_at_center,_rgba(52,211,153,0.35),_transparent_60%)]" />
+            <img src="/case-4g-boost.jpg" alt="Усиление 4G/5G связи и стабильный интернет" className="h-48 w-full object-cover rounded-t-2xl" />
             <div className="p-6">
               <h4 className="font-semibold">Усиление 4G/5G</h4>
               <p className="mt-1 text-sm text-slate-600">Настроенная MIMO‑антенна и гермобокс. Скорость выросла в 3–5 раз.</p>
