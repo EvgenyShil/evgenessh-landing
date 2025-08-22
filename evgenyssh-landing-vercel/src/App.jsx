@@ -1,11 +1,13 @@
 import React from "react";
-import { Phone, Mail, Wifi, Router, Camera, Home, Sprout, Clock, ShieldCheck, Wrench, MapPin, Link as LinkIcon } from "lucide-react";
+import { Phone, Mail, Send, Wifi, Router, Camera, Home, Sprout, Clock, ShieldCheck, Wrench, MapPin, Link as LinkIcon } from "lucide-react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // === CONTACTS (редактируй при необходимости) ===
 const NAME = "Евгений Шилкин";
-const PHONE_DISPLAY = "+7 915 358‑25‑05";
-const PHONE_TEL = "+79153582505";
+const PHONE_DISPLAY = "+7 925 263‑72‑73";
+const PHONE_TEL = "+79252637273";
 const EMAIL = "j.shilkin@gmail.com";
+const TELEGRAM_URL = "https://t.me/evgenyssh";
 const AVITO_URL = "https://www.avito.ru/vatutinki/predlozheniya_uslug/internet_na_dache_mesh_wi-fi_kamery_umnyy_dom_7566728669";
 
 // === SMALL UTILS ===
@@ -56,6 +58,13 @@ const CTAButtons = () => (
       <Phone className="h-5 w-5" /> Позвонить
     </a>
     <a
+      href={TELEGRAM_URL}
+      target="_blank" rel="noreferrer"
+      className="inline-flex items-center gap-2 rounded-xl border border-sky-200 bg-sky-50 px-5 py-3 font-semibold text-sky-800 hover:bg-sky-100"
+    >
+      <Send className="h-5 w-5" /> Написать в Telegram
+    </a>
+    <a
       href={`mailto:${EMAIL}?subject=%D0%97%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0&body=%D0%9E%D0%BF%D0%B8%D1%88%D0%B8%D1%82%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D1%83%2C%20%D0%B0%D0%B4%D1%80%D0%B5%D1%81%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0%20%D0%B8%20%D1%83%D0%B4%D0%BE%D0%B1%D0%BD%D0%BE%D0%B5%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F.`}
       className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-800 shadow hover:bg-slate-50"
     >
@@ -73,7 +82,8 @@ const CTAButtons = () => (
 
 export default function App() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-amber-50 via-emerald-50 to-white text-slate-900">
+    <>
+      <main className="min-h-screen bg-gradient-to-b from-amber-50 via-emerald-50 to-white text-slate-900">
       {/* NAV */}
       <header className="sticky top-0 z-50 border-b border-emerald-100/60 bg-white/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
@@ -236,6 +246,7 @@ export default function App() {
           <div className="grid gap-6 sm:grid-cols-2">
             <div className="space-y-3">
               <div className="flex items-center gap-3"><Phone className="h-5 w-5 text-amber-700"/><a href={`tel:${PHONE_TEL}`} className="font-semibold hover:underline">{PHONE_DISPLAY}</a></div>
+              <div className="flex items-center gap-3"><Send className="h-5 w-5 text-sky-700"/><a className="hover:underline" href={TELEGRAM_URL} target="_blank" rel="noreferrer">@evgenyssh</a></div>
               <div className="flex items-center gap-3"><Mail className="h-5 w-5 text-emerald-700"/><a href={`mailto:${EMAIL}`} className="hover:underline">{EMAIL}</a></div>
               <div className="flex items-center gap-3"><MapPin className="h-5 w-5 text-emerald-700"/><span>Москва и Новая Москва • выезд по договорённости</span></div>
               <div className="flex items-center gap-3"><LinkIcon className="h-5 w-5 text-emerald-700"/><a className="hover:underline" href={AVITO_URL} target="_blank" rel="noreferrer">Объявление на Avito</a></div>
@@ -262,5 +273,7 @@ export default function App() {
         </div>
       </footer>
     </main>
+    <SpeedInsights />
+    </>
   );
 }

@@ -1,8 +1,12 @@
 import React from "react";
-import { Wifi, Router, Camera, Home, Sprout, Clock, ShieldCheck, Wrench, MapPin, Link as LinkIcon } from "lucide-react";
+import { Phone, Send, Wifi, Router, Camera, Home, Sprout, Clock, ShieldCheck, Wrench, MapPin, Link as LinkIcon } from "lucide-react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const BRAND = "Мастер связи";
 const AVITO_URL = "https://www.avito.ru/vatutinki/predlozheniya_uslug/internet_na_dache_mesh_wi-fi_kamery_umnyy_dom_7566728669";
+const PHONE_DISPLAY = "+7 925 263‑72‑73";
+const PHONE_TEL = "+79252637273";
+const TELEGRAM_URL = "https://t.me/evgenyssh";
 
 const Section = ({ id, title, subtitle, children }) => (
   <section id={id} className="scroll-mt-24 py-16 sm:py-24">
@@ -38,9 +42,23 @@ const CardHeader = ({ Icon, title, text }) => (
   </div>
 );
 
-// CTA без телефона и почты — только Avito
+// CTA: телефон, Telegram, Avito
 const CTAButtons = () => (
   <div className="flex flex-wrap items-center gap-3">
+    <a
+      href={`tel:${PHONE_TEL}`}
+      className="inline-flex items-center gap-2 rounded-xl bg-amber-600 px-5 py-3 font-semibold text-white shadow hover:bg-amber-700"
+    >
+      <Phone className="h-5 w-5" /> {PHONE_DISPLAY}
+    </a>
+    <a
+      href={TELEGRAM_URL}
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex items-center gap-2 rounded-xl border border-sky-200 bg-sky-50 px-5 py-3 font-semibold text-sky-800 hover:bg-sky-100"
+    >
+      <Send className="h-5 w-5" /> Telegram
+    </a>
     <a
       href={AVITO_URL}
       target="_blank"
@@ -54,7 +72,8 @@ const CTAButtons = () => (
 
 export default function App() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-amber-50 via-emerald-50 to-white text-slate-900">
+    <>
+      <main className="min-h-screen bg-gradient-to-b from-amber-50 via-emerald-50 to-white text-slate-900">
       {/* NAV */}
       <header className="sticky top-0 z-50 border-b border-emerald-100/60 bg-white/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
@@ -189,6 +208,14 @@ export default function App() {
           <div className="grid gap-6 sm:grid-cols-2">
             <div className="space-y-3">
               <div className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-amber-700"/>
+                <a href={`tel:${PHONE_TEL}`} className="font-semibold hover:underline">{PHONE_DISPLAY}</a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Send className="h-5 w-5 text-sky-700"/>
+                <a className="hover:underline" href={TELEGRAM_URL} target="_blank" rel="noreferrer">@evgenyssh</a>
+              </div>
+              <div className="flex items-center gap-3">
                 <MapPin className="h-5 w-5 text-emerald-700"/>
                 <span>Москва и Новая Москва • выезд по договорённости</span>
               </div>
@@ -214,5 +241,7 @@ export default function App() {
         </div>
       </footer>
     </main>
+    <SpeedInsights />
+    </>
   );
 }
