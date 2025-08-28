@@ -234,11 +234,8 @@ export default function App() {
         <div className="mx-auto max-w-6xl px-4 text-sm text-slate-500">
           <div className="flex flex-col items-start justify-between gap-3 sm:flex-row">
             <p>
-              © {new Date().getFullYear()} {NAME}. Интернет на даче, Wi‑Fi, камеры, умный дом. 
+              © {new Date().getFullYear()} {NAME}. Интернет на даче, Wi‑Fi, камеры, умный дом.
               Цветовая палитра подобрана без тёмно‑синего.
-            </p>
-            <p>
-              Сделано быстро на React + Tailwind. Готов к развёртыванию на Tilda/Framer/Vercel.
             </p>
           </div>
         </div>
