@@ -1,5 +1,5 @@
 import React from "react";
-import { Phone, Send, Wifi, Router, Camera, Home, Sprout, Clock, ShieldCheck, Wrench, MapPin, Link as LinkIcon } from "lucide-react";
+import { Phone, Send, MessageCircle, Wifi, Router, Camera, Home, Sprout, Clock, ShieldCheck, Wrench, MapPin, Link as LinkIcon } from "lucide-react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const BRAND = "Мастер связи";
@@ -7,6 +7,7 @@ const AVITO_URL = "https://www.avito.ru/vatutinki/predlozheniya_uslug/internet_n
 const PHONE_DISPLAY = "+7 925 263‑72‑73";
 const PHONE_TEL = "+79252637273";
 const TELEGRAM_URL = "https://t.me/evgenyssh";
+const WHATSAPP_URL = `https://wa.me/${PHONE_TEL.replace("+", "")}`;
 
 const Section = ({ id, title, subtitle, children }) => (
   <section id={id} className="scroll-mt-24 py-16 sm:py-24">
@@ -60,6 +61,14 @@ const CTAButtons = () => (
       <Send className="h-5 w-5" /> Telegram
     </a>
     <a
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex items-center gap-2 rounded-xl border border-green-200 bg-green-50 px-5 py-3 font-semibold text-green-800 hover:bg-green-100"
+    >
+      <MessageCircle className="h-5 w-5" /> WhatsApp
+    </a>
+    <a
       href={AVITO_URL}
       target="_blank"
       rel="noreferrer"
@@ -85,7 +94,6 @@ export default function App() {
           </a>
           <nav className="hidden gap-6 md:flex text-sm font-medium">
             <a href="#services" className="hover:text-emerald-700">Услуги</a>
-            <a href="#pricing" className="hover:text-emerald-700">Цены</a>
             <a href="#cases" className="hover:text-emerald-700">Кейсы</a>
             <a href="#process" className="hover:text-emerald-700">Как работаю</a>
             <a href="#contacts" className="hover:text-emerald-700">Контакты</a>
@@ -126,43 +134,6 @@ export default function App() {
           <Card><CardHeader Icon={Wrench} title="Диагностика и настройка" text="Решу проблемы со скоростью, обрывами, двоением Wi‑Fi, конфликтами оборудования." /></Card>
           <Card><CardHeader Icon={ShieldCheck} title="Чистый монтаж" text="Кабель‑каналы, гермобоксы, маркировка. Опрятно и надолго." /></Card>
         </div>
-      </Section>
-
-      {/* PRICING */}
-      <Section id="pricing" title="Примеры цен" subtitle="Итоговая стоимость зависит от задачи и выбранного оборудования. Точно скажу после короткой диагностики на месте или по фото/видео объекта.">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <Card className="p-6">
-            <h3 className="text-xl font-bold">Интернет + антенна</h3>
-            <p className="mt-2 text-slate-600">Подбор, монтаж, настройка</p>
-            <p className="mt-4 text-3xl font-extrabold">от 4 500 ₽</p>
-            <ul className="mt-4 space-y-2 text-slate-700">
-              <li>• Замер уровня сигнала</li>
-              <li>• Компактный гермобокс</li>
-              <li>• Проверка скорости</li>
-            </ul>
-          </Card>
-          <Card className="p-6">
-            <h3 className="text-xl font-bold">Mesh Wi‑Fi / точки доступа</h3>
-            <p className="mt-2 text-slate-600">Роуминг без разрывов</p>
-            <p className="mt-4 text-3xl font-extrabold">от 3 500 ₽ / точка</p>
-            <ul className="mt-4 space-y-2 text-slate-700">
-              <li>• План размещения</li>
-              <li>• Скрытая прокладка</li>
-              <li>• Гостевая сеть</li>
-            </ul>
-          </Card>
-          <Card className="p-6">
-            <h3 className="text-xl font-bold">Камеры наблюдения</h3>
-            <p className="mt-2 text-slate-600">Улица/дом, запись и удалённый доступ</p>
-            <p className="mt-4 text-3xl font-extrabold">от 2 500 ₽ / камера</p>
-            <ul className="mt-4 space-y-2 text-slate-700">
-              <li>• Настройка уведомлений</li>
-              <li>• Проксировка в интернет</li>
-              <li>• Короткий гайд по приложению</li>
-            </ul>
-          </Card>
-        </div>
-        <p className="mt-6 text-sm text-slate-500">Цены указаны за работы. Оборудование подбирается под бюджет и задачи; предоставлю варианты.</p>
       </Section>
 
       {/* CASES */}
@@ -210,6 +181,10 @@ export default function App() {
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-amber-700"/>
                 <a href={`tel:${PHONE_TEL}`} className="font-semibold hover:underline">{PHONE_DISPLAY}</a>
+              </div>
+              <div className="flex items-center gap-3">
+                <MessageCircle className="h-5 w-5 text-green-700"/>
+                <a className="hover:underline" href={WHATSAPP_URL} target="_blank" rel="noreferrer">WhatsApp</a>
               </div>
               <div className="flex items-center gap-3">
                 <Send className="h-5 w-5 text-sky-700"/>
