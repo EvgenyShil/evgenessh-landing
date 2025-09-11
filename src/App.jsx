@@ -1,5 +1,5 @@
 import React from "react";
-import { Phone, Send, Wifi, Router, Camera, Home, Sprout, Clock, ShieldCheck, Wrench, MapPin, Link as LinkIcon } from "lucide-react";
+import { Phone, Send, MessageCircle, Wifi, Router, Camera, Home, Sprout, Clock, ShieldCheck, Wrench, MapPin, Link as LinkIcon } from "lucide-react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const BRAND = "Мастер связи";
@@ -7,6 +7,7 @@ const AVITO_URL = "https://www.avito.ru/vatutinki/predlozheniya_uslug/internet_n
 const PHONE_DISPLAY = "+7 925 263‑72‑73";
 const PHONE_TEL = "+79252637273";
 const TELEGRAM_URL = "https://t.me/evgenyssh";
+const WHATSAPP_URL = "https://wa.me/79252637273";
 
 const Section = ({ id, title, subtitle, children }) => (
   <section id={id} className="scroll-mt-24 py-16 sm:py-24">
@@ -58,6 +59,14 @@ const CTAButtons = () => (
       className="inline-flex items-center gap-2 rounded-xl border border-sky-200 bg-sky-50 px-5 py-3 font-semibold text-sky-800 hover:bg-sky-100"
     >
       <Send className="h-5 w-5" /> Telegram
+    </a>
+    <a
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex items-center gap-2 rounded-xl border border-green-200 bg-green-50 px-5 py-3 font-semibold text-green-800 hover:bg-green-100"
+    >
+      <MessageCircle className="h-5 w-5" /> WhatsApp
     </a>
     <a
       href={AVITO_URL}
@@ -212,13 +221,17 @@ export default function App() {
                 <a href={`tel:${PHONE_TEL}`} className="font-semibold hover:underline">{PHONE_DISPLAY}</a>
               </div>
               <div className="flex items-center gap-3">
-                <Send className="h-5 w-5 text-sky-700"/>
-                <a className="hover:underline" href={TELEGRAM_URL} target="_blank" rel="noreferrer">@evgenyssh</a>
-              </div>
-              <div className="flex items-center gap-3">
-                <MapPin className="h-5 w-5 text-emerald-700"/>
-                <span>Москва и Новая Москва • выезд по договорённости</span>
-              </div>
+              <Send className="h-5 w-5 text-sky-700"/>
+              <a className="hover:underline" href={TELEGRAM_URL} target="_blank" rel="noreferrer">@evgenyssh</a>
+            </div>
+            <div className="flex items-center gap-3">
+              <MessageCircle className="h-5 w-5 text-green-700"/>
+              <a className="hover:underline" href={WHATSAPP_URL} target="_blank" rel="noreferrer">WhatsApp</a>
+            </div>
+            <div className="flex items-center gap-3">
+              <MapPin className="h-5 w-5 text-emerald-700"/>
+              <span>Москва и Новая Москва • выезд по договорённости</span>
+            </div>
               <div className="flex items-center gap-3">
                 <LinkIcon className="h-5 w-5 text-emerald-700"/>
                 <a className="hover:underline" href={AVITO_URL} target="_blank" rel="noreferrer">Объявление на Avito</a>
