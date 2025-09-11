@@ -1,4 +1,4 @@
-# Евгений Шилкин — лендинг (Vite + React + Tailwind)
+# Евгений — лендинг (Vite + React + Tailwind)
 
 Готов к деплою на Vercel.
 

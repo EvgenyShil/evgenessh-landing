@@ -3,10 +3,10 @@ import { Phone, Mail, Send, Wifi, Router, Camera, Home, Sprout, Clock, ShieldChe
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // === CONTACTS (редактируй при необходимости) ===
-const NAME = "Евгений Шилкин";
+const NAME = "Евгений";
 const PHONE_DISPLAY = "+7 925 263‑72‑73";
 const PHONE_TEL = "+79252637273";
-const EMAIL = "j.shilkin@gmail.com";
+const EMAIL = "evgenyssh@gmail.com";
 const TELEGRAM_URL = "https://t.me/evgenyssh";
 const AVITO_URL = "https://www.avito.ru/vatutinki/predlozheniya_uslug/internet_na_dache_mesh_wi-fi_kamery_umnyy_dom_7566728669";
 
