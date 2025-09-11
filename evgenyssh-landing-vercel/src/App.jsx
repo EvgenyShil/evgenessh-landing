@@ -120,6 +120,7 @@ export default function App() {
           <div>
             <div className="mb-4 flex flex-wrap gap-2">
               <Pill><MapPin className="mr-1 h-4 w-4"/>Москва и Новая Москва</Pill>
+              <Pill><MapPin className="mr-1 h-4 w-4"/>Подмосковье</Pill>
               <Pill>Выезд и монтаж «под ключ»</Pill>
               <Pill>Аккуратно, чисто, без лишних дыр</Pill>
             </div>
@@ -257,7 +258,7 @@ export default function App() {
               <div className="flex items-center gap-3"><Send className="h-5 w-5 text-sky-700"/><a className="hover:underline" href={TELEGRAM_URL} target="_blank" rel="noreferrer">@evgenyssh</a></div>
               <div className="flex items-center gap-3"><MessageCircle className="h-5 w-5 text-green-700"/><a className="hover:underline" href={WHATSAPP_URL} target="_blank" rel="noreferrer">WhatsApp</a></div>
               <div className="flex items-center gap-3"><Mail className="h-5 w-5 text-emerald-700"/><a href={`mailto:${EMAIL}`} className="hover:underline">{EMAIL}</a></div>
-              <div className="flex items-center gap-3"><MapPin className="h-5 w-5 text-emerald-700"/><span>Москва и Новая Москва • выезд по договорённости</span></div>
+              <div className="flex items-center gap-3"><MapPin className="h-5 w-5 text-emerald-700"/><span>Москва, Новая Москва и Подмосковье • выезд по договорённости</span></div>
               <div className="flex items-center gap-3"><LinkIcon className="h-5 w-5 text-emerald-700"/><a className="hover:underline" href={AVITO_URL} target="_blank" rel="noreferrer">Объявление на Avito</a></div>
             </div>
             <div className="space-y-4">
