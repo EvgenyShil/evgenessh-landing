@@ -1,14 +1,15 @@
 import React from "react";
-import { Phone, Mail, Send, Wifi, Router, Camera, Home, Sprout, Clock, ShieldCheck, Wrench, MapPin, Link as LinkIcon } from "lucide-react";
+import { Phone, Mail, Send, MessageCircle, Wifi, Router, Camera, Home, Sprout, Clock, ShieldCheck, Wrench, MapPin, Link as LinkIcon } from "lucide-react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // === CONTACTS (редактируй при необходимости) ===
-const NAME = "Евгений Шилкин";
+const NAME = "Евгений";
 const PHONE_DISPLAY = "+7 925 263‑72‑73";
 const PHONE_TEL = "+79252637273";
-const EMAIL = "j.shilkin@gmail.com";
+const EMAIL = "evgenyssh@gmail.com";
 const TELEGRAM_URL = "https://t.me/evgenyssh";
 const AVITO_URL = "https://www.avito.ru/vatutinki/predlozheniya_uslug/internet_na_dache_mesh_wi-fi_kamery_umnyy_dom_7566728669";
+const WHATSAPP_URL = "https://wa.me/79252637273";
 
 // === SMALL UTILS ===
 const Section = ({ id, title, subtitle, children }) => (
@@ -65,6 +66,13 @@ const CTAButtons = () => (
       <Send className="h-5 w-5" /> Написать в Telegram
     </a>
     <a
+      href={WHATSAPP_URL}
+      target="_blank" rel="noreferrer"
+      className="inline-flex items-center gap-2 rounded-xl border border-green-200 bg-green-50 px-5 py-3 font-semibold text-green-800 hover:bg-green-100"
+    >
+      <MessageCircle className="h-5 w-5" /> Написать в WhatsApp
+    </a>
+    <a
       href={`mailto:${EMAIL}?subject=%D0%97%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0&body=%D0%9E%D0%BF%D0%B8%D1%88%D0%B8%D1%82%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D1%83%2C%20%D0%B0%D0%B4%D1%80%D0%B5%D1%81%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%B0%20%D0%B8%20%D1%83%D0%B4%D0%BE%D0%B1%D0%BD%D0%BE%D0%B5%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F.`}
       className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-800 shadow hover:bg-slate-50"
     >
@@ -112,6 +120,7 @@ export default function App() {
           <div>
             <div className="mb-4 flex flex-wrap gap-2">
               <Pill><MapPin className="mr-1 h-4 w-4"/>Москва и Новая Москва</Pill>
+              <Pill><MapPin className="mr-1 h-4 w-4"/>Подмосковье</Pill>
               <Pill>Выезд и монтаж «под ключ»</Pill>
               <Pill>Аккуратно, чисто, без лишних дыр</Pill>
             </div>
@@ -163,8 +172,8 @@ export default function App() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <Card className="p-6">
             <h3 className="text-xl font-bold">Интернет + антенна</h3>
-            <p className="mt-2 text-slate-600">Подбор, монтаж, настройка</p>
-            <p className="mt-4 text-3xl font-extrabold">от 4 500 ₽</p>
+            <p className="mt-2 text-slate-600">Загородный интернет через усиление сотовой связи без проводов</p>
+            <p className="mt-4 text-3xl font-extrabold">от 6 500 ₽</p>
             <ul className="mt-4 space-y-2 text-slate-700">
               <li>• Замер уровня сигнала</li>
               <li>• Компактный гермобокс</li>
@@ -174,7 +183,7 @@ export default function App() {
           <Card className="p-6">
             <h3 className="text-xl font-bold">Mesh Wi‑Fi / точки доступа</h3>
             <p className="mt-2 text-slate-600">Роуминг без разрывов</p>
-            <p className="mt-4 text-3xl font-extrabold">от 3 500 ₽ / точка</p>
+            <p className="mt-4 text-3xl font-extrabold">от 3 000 ₽ / точка</p>
             <ul className="mt-4 space-y-2 text-slate-700">
               <li>• План размещения</li>
               <li>• Скрытая прокладка</li>
@@ -247,8 +256,9 @@ export default function App() {
             <div className="space-y-3">
               <div className="flex items-center gap-3"><Phone className="h-5 w-5 text-amber-700"/><a href={`tel:${PHONE_TEL}`} className="font-semibold hover:underline">{PHONE_DISPLAY}</a></div>
               <div className="flex items-center gap-3"><Send className="h-5 w-5 text-sky-700"/><a className="hover:underline" href={TELEGRAM_URL} target="_blank" rel="noreferrer">@evgenyssh</a></div>
+              <div className="flex items-center gap-3"><MessageCircle className="h-5 w-5 text-green-700"/><a className="hover:underline" href={WHATSAPP_URL} target="_blank" rel="noreferrer">WhatsApp</a></div>
               <div className="flex items-center gap-3"><Mail className="h-5 w-5 text-emerald-700"/><a href={`mailto:${EMAIL}`} className="hover:underline">{EMAIL}</a></div>
-              <div className="flex items-center gap-3"><MapPin className="h-5 w-5 text-emerald-700"/><span>Москва и Новая Москва • выезд по договорённости</span></div>
+              <div className="flex items-center gap-3"><MapPin className="h-5 w-5 text-emerald-700"/><span>Москва, Новая Москва и Подмосковье • выезд по договорённости</span></div>
               <div className="flex items-center gap-3"><LinkIcon className="h-5 w-5 text-emerald-700"/><a className="hover:underline" href={AVITO_URL} target="_blank" rel="noreferrer">Объявление на Avito</a></div>
             </div>
             <div className="space-y-4">
@@ -263,11 +273,8 @@ export default function App() {
         <div className="mx-auto max-w-6xl px-4 text-sm text-slate-500">
           <div className="flex flex-col items-start justify-between gap-3 sm:flex-row">
             <p>
-              © {new Date().getFullYear()} {NAME}. Интернет на даче, Wi‑Fi, камеры, умный дом. 
+              © {new Date().getFullYear()} {NAME}. Интернет на даче, Wi‑Fi, камеры, умный дом.
               Цветовая палитра подобрана без тёмно‑синего.
-            </p>
-            <p>
-              Сделано быстро на React + Tailwind. Готов к развёртыванию на Tilda/Framer/Vercel.
             </p>
           </div>
         </div>

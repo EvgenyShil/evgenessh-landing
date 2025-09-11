@@ -1,5 +1,5 @@
 import React from "react";
-import { Phone, Send, Wifi, Router, Camera, Home, Sprout, Clock, ShieldCheck, Wrench, MapPin, Link as LinkIcon } from "lucide-react";
+import { Phone, Send, MessageCircle, Wifi, Router, Camera, Home, Sprout, Clock, ShieldCheck, Wrench, MapPin, Link as LinkIcon } from "lucide-react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const BRAND = "Мастер связи";
@@ -7,6 +7,7 @@ const AVITO_URL = "https://www.avito.ru/vatutinki/predlozheniya_uslug/internet_n
 const PHONE_DISPLAY = "+7 925 263‑72‑73";
 const PHONE_TEL = "+79252637273";
 const TELEGRAM_URL = "https://t.me/evgenyssh";
+const WHATSAPP_URL = "https://wa.me/79252637273";
 
 const Section = ({ id, title, subtitle, children }) => (
   <section id={id} className="scroll-mt-24 py-16 sm:py-24">
@@ -60,6 +61,14 @@ const CTAButtons = () => (
       <Send className="h-5 w-5" /> Telegram
     </a>
     <a
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noreferrer"
+      className="inline-flex items-center gap-2 rounded-xl border border-green-200 bg-green-50 px-5 py-3 font-semibold text-green-800 hover:bg-green-100"
+    >
+      <MessageCircle className="h-5 w-5" /> WhatsApp
+    </a>
+    <a
       href={AVITO_URL}
       target="_blank"
       rel="noreferrer"
@@ -99,6 +108,7 @@ export default function App() {
           <div>
             <div className="mb-4 flex flex-wrap gap-2">
               <Pill><MapPin className="mr-1 h-4 w-4"/>Москва и Новая Москва</Pill>
+              <Pill><MapPin className="mr-1 h-4 w-4"/>Подмосковье</Pill>
               <Pill>Выезд и монтаж «под ключ»</Pill>
               <Pill>Аккуратно, чисто, без лишних дыр</Pill>
             </div>
@@ -133,8 +143,8 @@ export default function App() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <Card className="p-6">
             <h3 className="text-xl font-bold">Интернет + антенна</h3>
-            <p className="mt-2 text-slate-600">Подбор, монтаж, настройка</p>
-            <p className="mt-4 text-3xl font-extrabold">от 4 500 ₽</p>
+            <p className="mt-2 text-slate-600">Загородный интернет через усиление сотовой связи без проводов</p>
+            <p className="mt-4 text-3xl font-extrabold">от 6 500 ₽</p>
             <ul className="mt-4 space-y-2 text-slate-700">
               <li>• Замер уровня сигнала</li>
               <li>• Компактный гермобокс</li>
@@ -144,7 +154,7 @@ export default function App() {
           <Card className="p-6">
             <h3 className="text-xl font-bold">Mesh Wi‑Fi / точки доступа</h3>
             <p className="mt-2 text-slate-600">Роуминг без разрывов</p>
-            <p className="mt-4 text-3xl font-extrabold">от 3 500 ₽ / точка</p>
+            <p className="mt-4 text-3xl font-extrabold">от 3 000 ₽ / точка</p>
             <ul className="mt-4 space-y-2 text-slate-700">
               <li>• План размещения</li>
               <li>• Скрытая прокладка</li>
@@ -212,13 +222,17 @@ export default function App() {
                 <a href={`tel:${PHONE_TEL}`} className="font-semibold hover:underline">{PHONE_DISPLAY}</a>
               </div>
               <div className="flex items-center gap-3">
-                <Send className="h-5 w-5 text-sky-700"/>
-                <a className="hover:underline" href={TELEGRAM_URL} target="_blank" rel="noreferrer">@evgenyssh</a>
-              </div>
-              <div className="flex items-center gap-3">
-                <MapPin className="h-5 w-5 text-emerald-700"/>
-                <span>Москва и Новая Москва • выезд по договорённости</span>
-              </div>
+              <Send className="h-5 w-5 text-sky-700"/>
+              <a className="hover:underline" href={TELEGRAM_URL} target="_blank" rel="noreferrer">@evgenyssh</a>
+            </div>
+            <div className="flex items-center gap-3">
+              <MessageCircle className="h-5 w-5 text-green-700"/>
+              <a className="hover:underline" href={WHATSAPP_URL} target="_blank" rel="noreferrer">WhatsApp</a>
+            </div>
+            <div className="flex items-center gap-3">
+              <MapPin className="h-5 w-5 text-emerald-700"/>
+              <span>Москва, Новая Москва и Подмосковье • выезд по договорённости</span>
+            </div>
               <div className="flex items-center gap-3">
                 <LinkIcon className="h-5 w-5 text-emerald-700"/>
                 <a className="hover:underline" href={AVITO_URL} target="_blank" rel="noreferrer">Объявление на Avito</a>
@@ -236,7 +250,6 @@ export default function App() {
         <div className="mx-auto max-w-6xl px-4 text-sm text-slate-500">
           <div className="flex flex-col items-start justify-between gap-3 sm:flex-row">
             <p>© {new Date().getFullYear()} {BRAND}. Интернет на даче, Wi‑Fi, камеры, умный дом.</p>
-            <p>Сделано на React + Tailwind. Готов к развёртыванию на Vercel.</p>
           </div>
         </div>
       </footer>
