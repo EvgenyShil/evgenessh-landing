@@ -249,7 +249,6 @@ export default function App() {
         <div className="mx-auto max-w-6xl px-4 text-sm text-slate-500">
           <div className="flex flex-col items-start justify-between gap-3 sm:flex-row">
             <p>© {new Date().getFullYear()} {BRAND}. Интернет на даче, Wi‑Fi, камеры, умный дом.</p>
-            <p>Сделано на React + Tailwind. Готов к развёртыванию на Vercel.</p>
           </div>
         </div>
       </footer>
