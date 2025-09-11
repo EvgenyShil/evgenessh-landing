@@ -171,8 +171,8 @@ export default function App() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <Card className="p-6">
             <h3 className="text-xl font-bold">Интернет + антенна</h3>
-            <p className="mt-2 text-slate-600">Подбор, монтаж, настройка</p>
-            <p className="mt-4 text-3xl font-extrabold">от 4 500 ₽</p>
+            <p className="mt-2 text-slate-600">Загородный интернет через усиление сотовой связи без проводов</p>
+            <p className="mt-4 text-3xl font-extrabold">от 6 500 ₽</p>
             <ul className="mt-4 space-y-2 text-slate-700">
               <li>• Замер уровня сигнала</li>
               <li>• Компактный гермобокс</li>
@@ -182,7 +182,7 @@ export default function App() {
           <Card className="p-6">
             <h3 className="text-xl font-bold">Mesh Wi‑Fi / точки доступа</h3>
             <p className="mt-2 text-slate-600">Роуминг без разрывов</p>
-            <p className="mt-4 text-3xl font-extrabold">от 3 500 ₽ / точка</p>
+            <p className="mt-4 text-3xl font-extrabold">от 3 000 ₽ / точка</p>
             <ul className="mt-4 space-y-2 text-slate-700">
               <li>• План размещения</li>
               <li>• Скрытая прокладка</li>
